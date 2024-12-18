@@ -41,7 +41,7 @@ long part1(char *filename) {
     if (pFile == NULL) {
         printf("Unable to read from file, check filename\n");
         return -1;
-    }
+    }   
 
     char line[256];
     int arr1[1000];

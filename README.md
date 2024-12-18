@@ -17,7 +17,7 @@ For example:
 
 ```bash
 gcc -c misc/hashtable.c -o misc/hashtable.o
-gcc -o day1 day1.c misc/hashtable.o
+gcc -o day1 day1.c ../misc/hashtable.o
 ./day1
 ```
 
