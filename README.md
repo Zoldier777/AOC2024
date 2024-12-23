@@ -1,5 +1,7 @@
 # AOC2024
 
+This is my attempt at 2024 advent of code challanges using C.
+
 ## Project Structure
 
 - `dayX/`: Each day has its own folder (e.g., `day1/`, `day2/`) containing:
