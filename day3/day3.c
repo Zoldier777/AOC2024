@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdbool.h>
 
 #define FNAME "./input.txt"
@@ -11,7 +10,7 @@
 
 static char input[FSIZE];
 
-static int isNum(const char **const c)
+static int toNum(const char **const c)
 {
     int val = 0;
     while (**c >= '0' && **c <= '9')
@@ -23,13 +22,13 @@ static int isNum(const char **const c)
 
 static int doubles(const char **const c)
 {
-    const int num1 = isNum(c);
+    const int num1 = toNum(c);
     if (!num1 || **c != ',')
     {
         return 0;
     }
     ++(*c);
-    const int num2 = isNum(c);
+    const int num2 = toNum(c);
     if (!num2 || **c != ')')
     {
         return 0;
