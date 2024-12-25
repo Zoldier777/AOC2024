@@ -19,9 +19,9 @@ int main()
     fread(grid, sizeof grid, 1, f);
     fclose(f);
 
-    int sum = 0;
-    for (int r = 0; r < R; r++)
-        for (int c = 0; c < C; c++)
+    int sum = 0, sum2 = 0;
+    for (int r = 0; r < R; r++) { 
+        for (int c = 0; c < C; c++) {
             if (grid[r][c] == 'X')
             {
                 // verical
@@ -36,14 +36,11 @@ int main()
                 sum += r > 2 && c > 2 && (grid[r - 1][c - 1] == 'M' && grid[r - 2][c - 2] == 'A' && grid[r - 3][c - 3] == 'S');   // Up-Left 
                 sum += r > 2 && c + 3 < C && (grid[r - 1][c + 1] == 'M' && grid[r - 2][c + 2] == 'A' && grid[r - 3][c + 3] == 'S');  //Up-Right
             }
-    printf("total sum for part1 is: %d", sum); //2644   
-    sum = 0;
-     for (int r = 0; r < R; r++)
-        for (int c = 0; c < C; c++)
-            if (grid[r][c] == 'A') {
-                sum += (grid[r-1][c-1] + grid[r-1][c+1] + grid[r+1][c-1] + grid[r+1][c+1]) == MAS && grid[r-1][c-1] != grid[r+1][c+1];           
+              if (grid[r][c] == 'A') {
+                sum2 += (grid[r-1][c-1] + grid[r-1][c+1] + grid[r+1][c-1] + grid[r+1][c+1]) == MAS && grid[r-1][c-1] != grid[r+1][c+1];          
             }
-    printf("total sum for part2 is: %d", sum); //1952
-    
+        }
+    }
+    printf("total sum for part1 is: %d \ntotal sum for part2 is: %d\n", sum, sum2); //2644 1952
     return 1;
 }
