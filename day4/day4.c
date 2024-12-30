@@ -5,6 +5,7 @@
 #define R 140     // file rows
 #define C (R + 1) // file cols
 #define MAS (('M' + 'S') * 2)
+
 static char grid[R][C];
 
 int main()
